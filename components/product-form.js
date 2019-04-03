@@ -17,7 +17,37 @@ const TEMPLATE = `
 `;
 
 export class ProductForm extends AppComponent {
+
     display() {
         this.innerHTML = TEMPLATE;
+    }
+
+    bindElements() {
+        this.nameInput = this.querySelector('#product-name-input');
+        this.priceInput = this.querySelector('#product-price-input');
+        this.submitBtn = this.querySelector('#product-submit-btn');
+    }
+
+    bindEvents() {
+        this.handleSubmitEvent();
+    }
+
+    handleSubmitEvent() {
+        this.submitBtn.addEventListener('click', () => {
+            // submit logic 
+            console.log("Submit product " + this.nameInput.value);
+            // create a complete object
+            let product = {
+                name: this.nameInput.value,
+                price: this.priceInput.value
+            }
+            // custom event and dispatch
+            let event = new CustomEvent('product-create', { detail: product });
+            document.dispatchEvent(event);
+        });
+    }
+
+    onReady() {
+        console.log('Product Form Component is ready')
     }
 }
