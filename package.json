@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "lite-server"
+    "serve": "lite-server",
+    "serve-api": "json-server --watch data/db.json --port 3004"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "json-server": "^0.14.2",
     "lite-server": "^2.4.0"
   },
   "dependencies": {

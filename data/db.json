@@ -1,0 +1,24 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Surface",
+            "price": 500
+        },
+        {
+            "id": 2,
+            "name": "iMac",
+            "price": 500
+        }
+    ],
+    "manufacturers": [
+        {
+            "id": 1,
+            "name": "Windows"
+        },
+        {
+            "id": 2,
+            "name": "Apple"
+        }
+    ]
+}
