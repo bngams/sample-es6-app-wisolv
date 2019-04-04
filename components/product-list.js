@@ -37,6 +37,9 @@ export class ProductList extends AppComponent {
         productService.fetchProducts()
             .then((data) => {
                 console.log("request result ", data);
+                for (const p of JSON.parse(data)) {
+                    this.productContainer.appendChild(new ProductCard(p));
+                }
             });
     }
 
